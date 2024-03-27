@@ -1,3 +1,5 @@
+[general]
+log_to_syslog = true
 
 [commands]
 

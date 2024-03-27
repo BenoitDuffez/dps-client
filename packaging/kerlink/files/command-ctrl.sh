@@ -92,7 +92,7 @@ update_certs() {
     fi
 
     CERT_DIR="/user/mydevices/certs"
-    DEVEUI=$(python3 -c 'from keroslib import utils; print(utils.getEUI64())')
+    DEVEUI=$(python3 -c 'from keroslib import utils; print(utils.getEUI64())' | tr '[:upper:]' '[:lower:]')
 
     if [ -z "$DEVICE_CERT_FILE" ]; then
         DEVICE_CERT_FILE="$CERT_DIR/$DEVEUI.cert.pem"

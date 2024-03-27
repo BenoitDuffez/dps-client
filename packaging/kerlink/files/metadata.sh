@@ -8,7 +8,7 @@ case "$1" in
         openssl x509 -noout -in $CERT_PATH -enddate  | cut -d= -f2
         ;;
     "chirpstack_version")
-        /user/chirpstack-gateway-bridge/chirpstack-gateway-bridge version
+        /opt/chirpstack-gateway-bridge/chirpstack-gateway-bridge version
         ;;
     "dps_client_version")
         /user/mydevices/dps-client -v

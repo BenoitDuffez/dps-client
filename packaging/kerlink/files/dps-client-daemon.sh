@@ -9,7 +9,7 @@ TEMP_CONFIG_FILE="$CONFIG_FILE.tmp"
 OLD_CONFIG_FILE="/etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml"
 
 obtain_gwid() {
-    DEVEUI=$(python3 -c 'from keroslib import utils; print(utils.getEUI64())')    
+    DEVEUI=$(python3 -c 'from keroslib import utils; print(utils.getEUI64())' | tr '[:upper:]' '[:lower:]')
 
     return 1
 }

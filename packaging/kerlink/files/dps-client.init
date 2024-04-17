@@ -19,7 +19,7 @@ START_STOP_DAEMON="start-stop-daemon"
 
 run_dir=/var/run/mydevices
 
-dps_client=/user/mydevices/dps-client-daemon.sh
+dps_client=/var/lib/mydevices/dps-client-daemon.sh
 dps_client_pidfile=$run_dir/$NAME.pid
 
 

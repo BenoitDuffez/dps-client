@@ -1,6 +1,6 @@
 #!/bin/sh
 
-CERT_DIR="/user/mydevices"
+CERT_DIR="/var/lib/mydevices"
 DEVEUI=""
 DEFAULT_CONFIG_FILE="/etc/mydevices/default.toml"
 CONFIG_DIR="/etc/chirpstack-gateway-bridge"
@@ -21,7 +21,7 @@ do
     mkdir -p $CONFIG_DIR
     GW_ID=$(echo "$DEVEUI" | tr '[:upper:]' '[:lower:]')
     DPS_CLIENT_ARGS="-i $DEFAULT_CONFIG_FILE -r $GW_ID -c $CERT_DIR/$DEVEUI.cert.pem -k $CERT_DIR/$DEVEUI.key.pem -o $TEMP_CONFIG_FILE"
-    /user/mydevices/dps-client $DPS_CLIENT_ARGS
+    /var/lib/mydevices/dps-client $DPS_CLIENT_ARGS
     RESTART_CHIRPSTACK=false
     if test -f "$OLD_CONFIG_FILE"; then
         if ! cmp -s "$TEMP_CONFIG_FILE" "$OLD_CONFIG_FILE" ; then

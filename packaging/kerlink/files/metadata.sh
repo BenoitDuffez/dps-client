@@ -11,7 +11,7 @@ case "$1" in
         /opt/chirpstack-gateway-bridge/chirpstack-gateway-bridge version
         ;;
     "dps_client_version")
-        /user/mydevices/dps-client -v
+        /var/lib/mydevices/dps-client -v
         ;;
     "eth_ip")
         ip addr show eth0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1

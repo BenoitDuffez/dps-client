@@ -6,15 +6,15 @@ log_to_syslog = true
   [commands.commands]
 
     [commands.commands.reboot]
-      command = "/user/mydevices/command-ctrl.sh reboot"
+      command = "/var/lib/mydevices/command-ctrl.sh reboot"
       max_execution_duration = "1s"
 
     [commands.commands.remote-ctrl]
-      command = "/user/mydevices/command-ctrl.sh remote-ctrl"
+      command = "/var/lib/mydevices/command-ctrl.sh remote-ctrl"
       max_execution_duration = "15s"
 
     [commands.commands.update]
-      command = "/user/mydevices/command-ctrl.sh update"
+      command = "/var/lib/mydevices/command-ctrl.sh update"
       max_execution_duration = "20m"
 
 [integration]
@@ -37,25 +37,25 @@ log_to_syslog = true
     max_execution_duration = "1m0s"
 
     [meta_data.dynamic.commands]
-      apn = "/user/mydevices/metadata.sh apn"
-      battery_critical = "/user/mydevices/metadata.sh battery_critical"
-      cert_expiration = "/user/mydevices/metadata.sh cert_expiration"
-      charge_complete = "/user/mydevices/metadata.sh charge_complete"
-      charge_fault = "/user/mydevices/metadata.sh charge_fault"
-      charging = "/user/mydevices/metadata.sh charging"
-      chirpstack_version = "/user/mydevices/metadata.sh chirpstack_version"
-      dps_client_version = "/user/mydevices/metadata.sh dps_client_version"
-      eth_ip = "/user/mydevices/metadata.sh eth_ip"
-      eui = "/user/mydevices/metadata.sh eui"
-      firmware_version = "/user/mydevices/metadata.sh firmware_version"
-      imei = "/user/mydevices/metadata.sh imei"
-      imsi = "/user/mydevices/metadata.sh imsi"
-      mac = "/user/mydevices/metadata.sh mac"
-      manufacturer = "/user/mydevices/metadata.sh manufacturer"
-      marshaler = "/user/mydevices/metadata.sh marshaler"
-      model = "/user/mydevices/metadata.sh model"
-      power_source = "/user/mydevices/metadata.sh power_source"
-      rssi = "/user/mydevices/metadata.sh rssi"
-      serial = "/user/mydevices/metadata.sh serial"
-      voltage = "/user/mydevices/metadata.sh voltage"
-      wwan_ip = "/user/mydevices/metadata.sh wwan_ip"
+      apn = "/var/lib/mydevices/metadata.sh apn"
+      battery_critical = "/var/lib/mydevices/metadata.sh battery_critical"
+      cert_expiration = "/var/lib/mydevices/metadata.sh cert_expiration"
+      charge_complete = "/var/lib/mydevices/metadata.sh charge_complete"
+      charge_fault = "/var/lib/mydevices/metadata.sh charge_fault"
+      charging = "/var/lib/mydevices/metadata.sh charging"
+      chirpstack_version = "/var/lib/mydevices/metadata.sh chirpstack_version"
+      dps_client_version = "/var/lib/mydevices/metadata.sh dps_client_version"
+      eth_ip = "/var/lib/mydevices/metadata.sh eth_ip"
+      eui = "/var/lib/mydevices/metadata.sh eui"
+      firmware_version = "/var/lib/mydevices/metadata.sh firmware_version"
+      imei = "/var/lib/mydevices/metadata.sh imei"
+      imsi = "/var/lib/mydevices/metadata.sh imsi"
+      mac = "/var/lib/mydevices/metadata.sh mac"
+      manufacturer = "/var/lib/mydevices/metadata.sh manufacturer"
+      marshaler = "/var/lib/mydevices/metadata.sh marshaler"
+      model = "/var/lib/mydevices/metadata.sh model"
+      power_source = "/var/lib/mydevices/metadata.sh power_source"
+      rssi = "/var/lib/mydevices/metadata.sh rssi"
+      serial = "/var/lib/mydevices/metadata.sh serial"
+      voltage = "/var/lib/mydevices/metadata.sh voltage"
+      wwan_ip = "/var/lib/mydevices/metadata.sh wwan_ip"

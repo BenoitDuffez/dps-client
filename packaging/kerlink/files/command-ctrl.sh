@@ -91,15 +91,20 @@ update_certs() {
         exit 1
     fi
 
-    CERT_DIR="/user/mydevices/certs"
+    if [ -d /var/lib/mydevices ]; then
+      CERT_DIR="/var/lib/mydevices"
+    else
+      CERT_DIR="/user/mydevices"
+    fi
+
     DEVEUI=$(python3 -c 'from keroslib import utils; print(utils.getEUI64())')
 
     if [ -z "$DEVICE_CERT_FILE" ]; then
-        DEVICE_CERT_FILE="$CERT_DIR/$DEVEUI.cert.pem"
+        DEVICE_CERT_FILE="$(find $CERT_DIR -iname "$DEVEUI.cert.pem")"
     fi
 
     if [ -z "$DEVICE_KEY_FILE" ]; then
-        DEVICE_KEY_FILE="$CERT_DIR/$DEVEUI.key.pem"
+        DEVICE_KEY_FILE="$(find $CERT_DIR -iname "$DEVEUI.key.pem")"
     fi
 
     backup_file $DEVICE_CERT_FILE
